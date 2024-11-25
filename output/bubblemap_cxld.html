@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b26d7cdbb84ea5671c258a6a44757b24 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_b26d7cdbb84ea5671c258a6a44757b24" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b26d7cdbb84ea5671c258a6a44757b24 = L.map(
+                "map_b26d7cdbb84ea5671c258a6a44757b24",
+                {
+                    center: [21.0, 83.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4.4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9230e39e293a607617a314e9729f325c = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_9230e39e293a607617a314e9729f325c.addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            var circle_marker_d509a27e7b40307754e4158166c5c2ac = L.circleMarker(
+                [19.5, 75.0],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 64.34, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_d509a27e7b40307754e4158166c5c2ac.bindTooltip(
+                `<div>
+                     ['State: MAHARASHTRA', 'Count: 3217']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ef89297247f68a2728856dd7bde1c0a5 = L.circleMarker(
+                [13.5, 76.0],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 48.86, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_ef89297247f68a2728856dd7bde1c0a5.bindTooltip(
+                `<div>
+                     ['State: KARNATAKA', 'Count: 2443']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1a715851564c9d2656d136174ed43ae4 = L.circleMarker(
+                [11.9333, 79.8167],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.1, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_1a715851564c9d2656d136174ed43ae4.bindTooltip(
+                `<div>
+                     ['State: PUDUCHERRY', 'Count: 55']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0cee3206b66ad2fa4499ae07e40833dc = L.circleMarker(
+                [17.3753, 78.4744],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35.86, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_0cee3206b66ad2fa4499ae07e40833dc.bindTooltip(
+                `<div>
+                     ['State: HYDERABAD', 'Count: 1793']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_db0d85611f2eb374fe01be9be67282f6 = L.circleMarker(
+                [16.0, 79.0],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.7, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_db0d85611f2eb374fe01be9be67282f6.bindTooltip(
+                `<div>
+                     ['State: ANDHRA PRADESH', 'Count: 985']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4c15889a42dce0aa3dffb6809a5ba36e = L.circleMarker(
+                [29.0, 76.0],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.38, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_4c15889a42dce0aa3dffb6809a5ba36e.bindTooltip(
+                `<div>
+                     ['State: HARYANA', 'Count: 619']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_49fe97b5f2c3d649e73e7f23a8fb8d88 = L.circleMarker(
+                [23.75, 85.5],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.52, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_49fe97b5f2c3d649e73e7f23a8fb8d88.bindTooltip(
+                `<div>
+                     ['State: JHARKHAND', 'Count: 276']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3ff84ec8c7575e05f33536dcae17d687 = L.circleMarker(
+                [21.5, 82.0],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.84, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_3ff84ec8c7575e05f33536dcae17d687.bindTooltip(
+                `<div>
+                     ['State: CHHATTISGARH', 'Count: 142']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_91e9a758f00a7fdaf1693ce624b9282b = L.circleMarker(
+                [26.0, 93.0],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.3, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_91e9a758f00a7fdaf1693ce624b9282b.bindTooltip(
+                `<div>
+                     ['State: ASSAM', 'Count: 315']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_64f2773004dc886d4a3d08da56b88293 = L.circleMarker(
+                [20.5, 84.4167],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.0, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_64f2773004dc886d4a3d08da56b88293.bindTooltip(
+                `<div>
+                     ['State: ODISHA', 'Count: 400']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f22d5fcfedad8de012712e2aaed9bcda = L.circleMarker(
+                [27.25, 80.75],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 36.74, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_f22d5fcfedad8de012712e2aaed9bcda.bindTooltip(
+                `<div>
+                     ['State: UTTAR PRADESH', 'Count: 1837']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d7d0c64e3eb350e927155c1286238328 = L.circleMarker(
+                [23.0, 72.0],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.72, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_d7d0c64e3eb350e927155c1286238328.bindTooltip(
+                `<div>
+                     ['State: GUJARAT', 'Count: 636']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_294f4d55c47bdc5ffc0ebf345dffd156 = L.circleMarker(
+                [11.0, 78.0],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 34.88, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_294f4d55c47bdc5ffc0ebf345dffd156.bindTooltip(
+                `<div>
+                     ['State: TAMIL NADU', 'Count: 1744']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_072211283e7de5799c02d13fb2ac7ad2 = L.circleMarker(
+                [30.25, 79.25],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.44, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_072211283e7de5799c02d13fb2ac7ad2.bindTooltip(
+                `<div>
+                     ['State: UTTARAKHAND', 'Count: 272']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_53f8691127b5acb65f78b39365ec8aba = L.circleMarker(
+                [24.0, 88.0],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20.12, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_53f8691127b5acb65f78b39365ec8aba.bindTooltip(
+                `<div>
+                     ['State: WEST BENGAL', 'Count: 1006']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8a7c3efad147e8c4f40f5a8dd16e8c73 = L.circleMarker(
+                [26.0, 74.0],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.6, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_8a7c3efad147e8c4f40f5a8dd16e8c73.bindTooltip(
+                `<div>
+                     ['State: RAJASTHAN', 'Count: 430']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3a8afe2a3f8b99379a13c1dd578a5de8 = L.circleMarker(
+                [28.6667, 77.2167],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20.24, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_3a8afe2a3f8b99379a13c1dd578a5de8.bindTooltip(
+                `<div>
+                     ['State: DELHI', 'Count: 1012']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_344608aba7494b41000123146db75b9f = L.circleMarker(
+                [23.5, 78.5],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.4, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_344608aba7494b41000123146db75b9f.bindTooltip(
+                `<div>
+                     ['State: MADHYA PRADESH', 'Count: 420']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2f5b728d772ca951ed0d062de730011b = L.circleMarker(
+                [10.0, 76.5],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 25.12, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_2f5b728d772ca951ed0d062de730011b.bindTooltip(
+                `<div>
+                     ['State: KERALA', 'Count: 1256']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3460aa72849a4a25e5eb4b471851898f = L.circleMarker(
+                [32.7333, 74.8667],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.76, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_3460aa72849a4a25e5eb4b471851898f.bindTooltip(
+                `<div>
+                     ['State: JAMMU & KASHMIR', 'Count: 138']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_817b354b6a68ca581599d346b16b66b3 = L.circleMarker(
+                [47.15, 21.9167],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.1, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_817b354b6a68ca581599d346b16b66b3.bindTooltip(
+                `<div>
+                     ['State: BIHAR', 'Count: 405']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0e5933c4f3d5144d6629d3be6c07d34b = L.circleMarker(
+                [25.5, 91.3333],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.74, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_0e5933c4f3d5144d6629d3be6c07d34b.bindTooltip(
+                `<div>
+                     ['State: MEGHALAYA', 'Count: 37']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_53d6f46234fec277da921559968223e7 = L.circleMarker(
+                [30.8602, 72.3198],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.58, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_53d6f46234fec277da921559968223e7.bindTooltip(
+                `<div>
+                     ['State: PUNJAB', 'Count: 279']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1cac3865db79d3b948da31ded4122961 = L.circleMarker(
+                [15.3333, 74.0833],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.78, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_1cac3865db79d3b948da31ded4122961.bindTooltip(
+                `<div>
+                     ['State: GOA', 'Count: 139']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f1497cc09b3e1046772ceae601294954 = L.circleMarker(
+                [20.3228, 72.9652],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.26, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_f1497cc09b3e1046772ceae601294954.bindTooltip(
+                `<div>
+                     ['State: DADRA', 'Count: 13']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d1f16fab1793a76f3c2daa14c0568f68 = L.circleMarker(
+                [31.0, 78.0],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.22, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_d1f16fab1793a76f3c2daa14c0568f68.bindTooltip(
+                `<div>
+                     ['State: HIMACHAL PRADESH', 'Count: 161']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c4bbd434be7631bcb9dc7924ff1191f5 = L.circleMarker(
+                [24.0, 92.0],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.52, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_c4bbd434be7631bcb9dc7924ff1191f5.bindTooltip(
+                `<div>
+                     ['State: TRIPURA', 'Count: 26']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_674e5659c12a65972b316f79ccba90b4 = L.circleMarker(
+                [30.7343, 76.7933],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.88, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_674e5659c12a65972b316f79ccba90b4.bindTooltip(
+                `<div>
+                     ['State: CHANDIGARH', 'Count: 44']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f6574ff289d34b0a927de90c2863b2eb = L.circleMarker(
+                [27.75, 88.5],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.74, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_f6574ff289d34b0a927de90c2863b2eb.bindTooltip(
+                `<div>
+                     ['State: SIKKIM', 'Count: 37']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d844a8bdf6894a3315a545e0f8174637 = L.circleMarker(
+                [-3.198, 114.4621],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.12, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_d844a8bdf6894a3315a545e0f8174637.bindTooltip(
+                `<div>
+                     ['State: ANDAMAN', 'Count: 56']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_445eb5e1438f897c53a34b50a322bc83 = L.circleMarker(
+                [25.0, 94.0],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.78, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_445eb5e1438f897c53a34b50a322bc83.bindTooltip(
+                `<div>
+                     ['State: MANIPUR', 'Count: 39']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2e3e6ab9c9eeff491630e04d081f94e8 = L.circleMarker(
+                [23.0, 93.0],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.36, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_2e3e6ab9c9eeff491630e04d081f94e8.bindTooltip(
+                `<div>
+                     ['State: MIZORAM', 'Count: 18']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ec47c61bd5693413545ce283d726f1b3 = L.circleMarker(
+                [26.0, 94.25],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.64, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_ec47c61bd5693413545ce283d726f1b3.bindTooltip(
+                `<div>
+                     ['State: NAGALAND', 'Count: 32']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c62b4a37da18252ec5ada3d0ba16c512 = L.circleMarker(
+                [28.6128, 77.2311],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.26, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_c62b4a37da18252ec5ada3d0ba16c512.bindTooltip(
+                `<div>
+                     ['State: NEW DELHI', 'Count: 13']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ef942afbc11ffb552033485e7d64607e = L.circleMarker(
+                [28.0, 94.5],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.48, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_ef942afbc11ffb552033485e7d64607e.bindTooltip(
+                `<div>
+                     ['State: ARUNACHAL PRADESH', 'Count: 24']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_5ed65def3d18146c2561c0dc3d0349a0 = L.circleMarker(
+                [34.1667, 77.5833],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.16, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_5ed65def3d18146c2561c0dc3d0349a0.bindTooltip(
+                `<div>
+                     ['State: LEH', 'Count: 8']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a6027023685cfe79de5dfd6cdbd648ae = L.circleMarker(
+                [10.5669, 72.642],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.02, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_a6027023685cfe79de5dfd6cdbd648ae.bindTooltip(
+                `<div>
+                     ['State: KAVARATTI', 'Count: 1']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_bc3a6992e300b41e38507ffdc5a2db2f = L.circleMarker(
+                [19.4269, -102.4107],
+                {"bubblingMouseEvents": true, "color": "#ff0371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0371", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.02, "stroke": true, "weight": 3}
+            ).addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+    
+            circle_marker_bc3a6992e300b41e38507ffdc5a2db2f.bindTooltip(
+                `<div>
+                     ['State: APO', 'Count: 1']
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            tile_layer_9230e39e293a607617a314e9729f325c.addTo(map_b26d7cdbb84ea5671c258a6a44757b24);
+        
+</script>
+</html>

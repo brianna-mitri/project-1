@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d6ec8d4844608dd5fe9456f79a218424 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_d6ec8d4844608dd5fe9456f79a218424" ></div>
+        
+    
+<div style="
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    width: 250px;
+    height: 80px;
+    z-index:9999;
+    font-size:14px;
+    ">
+    <p><a style="color:#ff0371;font-size:150%;margin-left:20px;">◼</a>&emsp;Cancelled</p>
+    <p><a style="color:#45c585;font-size:150%;margin-left:20px;">◼</a>&emsp;Delivered</p>
+</div>
+<div style="
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    width: 150px;
+    height: 80px;
+    z-index:9998;
+    font-size:14px;
+    background-color: #ffffff;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    opacity: 0.7;
+    ">
+</div>
+</body>
+<script>
+    
+    
+            var map_d6ec8d4844608dd5fe9456f79a218424 = L.map(
+                "map_d6ec8d4844608dd5fe9456f79a218424",
+                {
+                    center: [21.0, 83.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_fd3c7d984ba62941d443c910a11a7ac0 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_fd3c7d984ba62941d443c910a11a7ac0.addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var marker_9798445cef9910027ce719bee5bedba8 = L.marker(
+                [19.5, 75.0],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_e76411d6aecea856e4b946672406d338 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.376486\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.892972 28.830411 13.661006 27.512752 11.791709 C 26.195093 9.922411 24.330812 8.505792 22.176841 7.737088 C 20.02287 6.968384 17.682926 6.88461 15.479498 7.49731 C 13.27607 8.110011 11.315256 9.389684 9.867292 11.159966 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 9.867292 11.159966 C 8.74253 12.535103 7.964558 14.160628 7.599121 15.899176 C 7.233683 17.637723 7.291371 19.438902 7.76731 21.150502 C 8.243249 22.862102 9.123644 24.434513 10.334097 25.734857 C 11.54455 27.035202 13.049976 28.02579 14.723158 28.622911 C 16.396341 29.220033 18.188782 29.40638 19.949012 29.166205 C 21.709241 28.926031 23.386239 28.266296 24.83829 27.242753 C 26.290341 26.21921 27.475357 24.861525 28.293198 23.28443 C 29.111039 21.707335 29.538 19.956542 29.538 18.180002 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_9798445cef9910027ce719bee5bedba8.setIcon(div_icon_e76411d6aecea856e4b946672406d338);
+        
+    
+        var popup_940063efec63a4f2b92f045f664f115a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_15ad128be29911e34b735c5011654ce8 = $(`<div id="html_15ad128be29911e34b735c5011654ce8" style="width: 100.0%; height: 100.0%;">Cancelled: 3217<br> Delivered: 5013</div>`)[0];
+                popup_940063efec63a4f2b92f045f664f115a.setContent(html_15ad128be29911e34b735c5011654ce8);
+            
+        
+
+        marker_9798445cef9910027ce719bee5bedba8.bindPopup(popup_940063efec63a4f2b92f045f664f115a)
+        ;
+
+        
+    
+    
+            var marker_64b28a3e0ef25198db11a10a580d1071 = L.marker(
+                [13.5, 76.0],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_2323aa717656c8f14ab11e8b87a31ce0 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.381515\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.852553 28.805179 13.583151 27.443986 11.695252 C 26.082793 9.807352 24.161123 8.395122 21.95287 7.659846 C 19.744617 6.924569 17.359929 6.902921 15.138691 7.597988 C 12.917454 8.293054 10.970463 9.670165 9.575221 11.533042 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 9.575221 11.533042 C 8.522235 12.938952 7.818245 14.575159 7.521439 16.30642 C 7.224634 18.037682 7.343423 19.814946 7.867988 21.491308 C 8.392553 23.167671 9.308031 24.695636 10.538752 25.948906 C 11.769473 27.202176 13.280566 28.145242 14.947129 28.700154 C 16.613692 29.255066 18.388507 29.4061 20.124871 29.140773 C 21.861235 28.875447 23.509954 28.201276 24.934747 27.173987 C 26.359541 26.146698 27.520041 24.795396 28.320324 23.231776 C 29.120608 21.668157 29.538 19.936521 29.538 18.180002 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_64b28a3e0ef25198db11a10a580d1071.setIcon(div_icon_2323aa717656c8f14ab11e8b87a31ce0);
+        
+    
+        var popup_43c2aa8d72ac61d77d0bf85fdb0df891 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9cd662ad7cc370edf358ea2d24aa35f0 = $(`<div id="html_9cd662ad7cc370edf358ea2d24aa35f0" style="width: 100.0%; height: 100.0%;">Cancelled: 2443<br> Delivered: 3700</div>`)[0];
+                popup_43c2aa8d72ac61d77d0bf85fdb0df891.setContent(html_9cd662ad7cc370edf358ea2d24aa35f0);
+            
+        
+
+        marker_64b28a3e0ef25198db11a10a580d1071.bindPopup(popup_43c2aa8d72ac61d77d0bf85fdb0df891)
+        ;
+
+        
+    
+    
+            var marker_cae06935c89d45e1c6f9e46818d15a8c = L.marker(
+                [11.9333, 79.8167],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_7cd20650b3404f2aba07f7f44c15bb77 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.387242\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.621231 28.652272 13.139695 27.032091 11.159212 C 25.411909 9.17873 23.155079 7.818858 20.647044 7.311847 C 18.13901 6.804837 15.531172 7.181296 13.268925 8.376929 C 11.006678 9.572561 9.226586 11.515191 8.232672 13.873035 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 8.232672 13.873035 C 7.594719 15.386438 7.300914 17.022847 7.372553 18.663652 C 7.444192 20.304457 7.879502 21.909032 8.646929 23.361075 C 9.414356 24.813117 10.4949 26.076676 11.81024 27.060165 C 13.125581 28.043654 14.643152 28.722724 16.252956 29.048153 C 17.862759 29.373581 19.524939 29.337312 21.119016 28.941975 C 22.713092 28.546637 24.199598 27.802018 25.470788 26.762091 C 26.741977 25.722164 27.766377 24.412675 28.469736 22.928539 C 29.173096 21.444404 29.538 19.822368 29.538 18.18 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_cae06935c89d45e1c6f9e46818d15a8c.setIcon(div_icon_7cd20650b3404f2aba07f7f44c15bb77);
+        
+    
+        var popup_7bf7e95b13ea56cebe2d8c081c0a601d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_745b51e40f1ab84297c8b4a0a43e5944 = $(`<div id="html_745b51e40f1ab84297c8b4a0a43e5944" style="width: 100.0%; height: 100.0%;">Cancelled: 55<br> Delivered: 71</div>`)[0];
+                popup_7bf7e95b13ea56cebe2d8c081c0a601d.setContent(html_745b51e40f1ab84297c8b4a0a43e5944);
+            
+        
+
+        marker_cae06935c89d45e1c6f9e46818d15a8c.bindPopup(popup_7bf7e95b13ea56cebe2d8c081c0a601d)
+        ;
+
+        
+    
+    
+            var marker_2b0d038b817b1297d2f32a2d8e71daef = L.marker(
+                [17.3753, 78.4744],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_fcaa163cdc327398d2776fbaafddbd65 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.393042\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.716181 28.716788 13.321274 27.204875 11.37589 C 25.692961 9.430505 23.574922 8.043466 21.187366 7.435207 C 18.79981 6.826948 16.276294 7.031496 14.01787 8.016341 C 11.759445 9.001186 9.892445 10.711239 8.713582 12.874728 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 8.713582 12.874728 C 7.905382 14.357964 7.446699 16.006456 7.372658 17.693967 C 7.298616 19.381479 7.611155 21.063808 8.286341 22.61213 C 8.961527 24.160452 9.981676 25.53421 11.268667 26.628207 C 12.555659 27.722205 14.075783 28.507785 15.712634 28.924793 C 17.349486 29.3418 19.060189 29.379312 20.713746 29.034455 C 22.367303 28.689598 23.920401 27.971406 25.25411 26.934875 C 26.587819 25.898343 27.667205 24.570623 28.409611 23.053385 C 29.152018 21.536148 29.538 19.869135 29.538 18.18 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_2b0d038b817b1297d2f32a2d8e71daef.setIcon(div_icon_fcaa163cdc327398d2776fbaafddbd65);
+        
+    
+        var popup_2f26dd500082c1f304572f19b300fa36 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f063e620b4f38d00f41dac2e5feab7fa = $(`<div id="html_f063e620b4f38d00f41dac2e5feab7fa" style="width: 100.0%; height: 100.0%;">Cancelled: 1793<br> Delivered: 2470</div>`)[0];
+                popup_2f26dd500082c1f304572f19b300fa36.setContent(html_f063e620b4f38d00f41dac2e5feab7fa);
+            
+        
+
+        marker_2b0d038b817b1297d2f32a2d8e71daef.bindPopup(popup_2f26dd500082c1f304572f19b300fa36)
+        ;
+
+        
+    
+    
+            var marker_886433b0ad6394015bbf9b5b695b003b = L.marker(
+                [16.0, 79.0],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_bca8e863f855562886599fcf7786a0df = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.400467\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.574701 28.619766 13.050947 26.945584 11.054777 C 25.271401 9.058607 22.946073 7.71498 20.380568 7.261362 C 17.815064 6.807745 15.169982 7.272534 12.912805 8.573585 C 10.655627 9.874635 8.927652 11.930502 8.034275 14.37784 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 8.034275 14.37784 C 7.478938 15.899143 7.263583 17.523804 7.403398 19.137252 C 7.543213 20.750701 8.034831 22.314098 8.843585 23.717195 C 9.652338 25.120292 10.758759 26.329314 12.084823 27.259001 C 13.410887 28.188689 14.924673 28.816662 16.519432 29.098638 C 18.11419 29.380613 19.751531 29.309803 21.315991 28.891202 C 22.880452 28.4726 24.334372 27.716282 25.575223 26.675584 C 26.816074 25.634885 27.813986 24.334858 28.498587 22.867178 C 29.183189 21.399498 29.538 19.799495 29.538 18.18 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_886433b0ad6394015bbf9b5b695b003b.setIcon(div_icon_bca8e863f855562886599fcf7786a0df);
+        
+    
+        var popup_b44d75da96af4c6973f361309599641b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4ed12132de86d99e140bd5761df10c06 = $(`<div id="html_4ed12132de86d99e140bd5761df10c06" style="width: 100.0%; height: 100.0%;">Cancelled: 985<br> Delivered: 1232</div>`)[0];
+                popup_b44d75da96af4c6973f361309599641b.setContent(html_4ed12132de86d99e140bd5761df10c06);
+            
+        
+
+        marker_886433b0ad6394015bbf9b5b695b003b.bindPopup(popup_b44d75da96af4c6973f361309599641b)
+        ;
+
+        
+    
+    
+            var marker_e378b889c8427e2732267b741116c4fa = L.marker(
+                [29.0, 76.0],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_dc4527378a176b02010e34177f3ba35a = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.405924\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.93531 28.856367 13.742669 27.58373 11.893608 C 26.311093 10.044547 24.506471 8.624816 22.409804 7.823181 C 20.313137 7.021546 18.021658 6.875183 15.840039 7.403551 C 13.658421 7.93192 11.687836 9.110517 10.190291 10.782639 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 10.190291 10.782639 C 8.991066 12.121664 8.13525 13.732438 7.69684 15.475689 C 7.25843 17.21894 7.250437 19.042934 7.673551 20.78996 C 8.096665 22.536987 8.938331 24.1552 10.125774 25.504684 C 11.313216 26.854168 12.811197 27.894874 14.490195 28.536819 C 16.169193 29.178763 17.979381 29.402896 19.764244 29.189837 C 21.549106 28.976778 23.255674 28.33285 24.73639 27.313731 C 26.217107 26.294611 27.428031 24.930544 28.264459 23.33947 C 29.100888 21.748397 29.538 19.977536 29.538 18.180002 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_e378b889c8427e2732267b741116c4fa.setIcon(div_icon_dc4527378a176b02010e34177f3ba35a);
+        
+    
+        var popup_1187c05ecf61bf8f71781d75db61b5dd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f91541af09899ab94d744ad398204706 = $(`<div id="html_f91541af09899ab94d744ad398204706" style="width: 100.0%; height: 100.0%;">Cancelled: 619<br> Delivered: 994</div>`)[0];
+                popup_1187c05ecf61bf8f71781d75db61b5dd.setContent(html_f91541af09899ab94d744ad398204706);
+            
+        
+
+        marker_e378b889c8427e2732267b741116c4fa.bindPopup(popup_1187c05ecf61bf8f71781d75db61b5dd)
+        ;
+
+        
+    
+    
+            var marker_3f3cbc8a6345db68e14fb22c99969d41 = L.marker(
+                [23.75, 85.5],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_7eae0b527f84cd39c992882c3aa5c804 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.411374\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.547869 28.600755 12.999843 26.89516 10.995085 C 25.189565 8.990326 22.824619 7.656951 20.22649 7.235238 C 17.628362 6.813524 14.963089 7.330423 12.710963 8.692788 C 10.458836 10.055152 8.76378 12.175918 7.931249 14.672918 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 7.931249 14.672918 C 7.423178 16.19677 7.252263 17.812985 7.430367 19.4094 C 7.60847 21.005815 8.131373 22.544625 8.962788 23.919037 C 9.794203 25.29345 10.91444 26.470919 12.245756 27.369728 C 13.577073 28.268537 15.087941 28.867402 16.67351 29.124762 C 18.259078 29.382123 19.881798 29.291884 21.429055 28.860308 C 22.976312 28.428732 24.411465 27.666039 25.634915 26.62516 C 26.858366 25.584281 27.841143 24.289865 28.515041 22.831742 C 29.188939 21.373619 29.538 19.786319 29.538 18.18 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_3f3cbc8a6345db68e14fb22c99969d41.setIcon(div_icon_7eae0b527f84cd39c992882c3aa5c804);
+        
+    
+        var popup_6b6245ebb8c7ba4cee27cfc9f3b95164 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_938dd19136b913830b86d729213f5403 = $(`<div id="html_938dd19136b913830b86d729213f5403" style="width: 100.0%; height: 100.0%;">Cancelled: 276<br> Delivered: 339</div>`)[0];
+                popup_6b6245ebb8c7ba4cee27cfc9f3b95164.setContent(html_938dd19136b913830b86d729213f5403);
+            
+        
+
+        marker_3f3cbc8a6345db68e14fb22c99969d41.bindPopup(popup_6b6245ebb8c7ba4cee27cfc9f3b95164)
+        ;
+
+        
+    
+    
+            var marker_8942b22ef1a37bf20225032d9da0ef3d = L.marker(
+                [21.5, 82.0],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_945797ededf57055ed95487c48813b71 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.416701\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 16.023831 28.909068 13.913772 27.728593 12.10946 C 26.548118 10.305148 24.866589 8.883754 22.890913 8.020175 C 20.915237 7.156597 18.729914 6.88777 16.603842 7.246773 C 14.477771 7.605776 12.501883 8.577255 10.919306 10.041671 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 10.919306 10.041671 C 9.567686 11.292375 8.548695 12.860316 7.954688 14.603387 C 7.360681 16.346457 7.210162 18.210358 7.516773 20.026158 C 7.823385 21.841957 8.577575 23.553091 9.710989 25.004473 C 10.844404 26.455856 12.321735 27.602274 14.009087 28.339825 C 15.69644 29.077375 17.54125 29.383082 19.376317 29.229239 C 21.211384 29.075395 22.979543 28.466794 24.52054 27.458593 C 26.061537 26.450393 27.327367 25.074001 28.203304 23.454163 C 29.079242 21.834326 29.538 20.021505 29.538 18.18 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_8942b22ef1a37bf20225032d9da0ef3d.setIcon(div_icon_945797ededf57055ed95487c48813b71);
+        
+    
+        var popup_49560a2108b7ed5b79a418ab56250e91 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_81b1c00454b2e846e70cd1cde22ed1bc = $(`<div id="html_81b1c00454b2e846e70cd1cde22ed1bc" style="width: 100.0%; height: 100.0%;">Cancelled: 142<br> Delivered: 243</div>`)[0];
+                popup_49560a2108b7ed5b79a418ab56250e91.setContent(html_81b1c00454b2e846e70cd1cde22ed1bc);
+            
+        
+
+        marker_8942b22ef1a37bf20225032d9da0ef3d.bindPopup(popup_49560a2108b7ed5b79a418ab56250e91)
+        ;
+
+        
+    
+    
+            var marker_d5b40e28ea5a2a169ad66b05c7bde938 = L.marker(
+                [26.0, 93.0],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_269106323e3f124b0c48109693dc77d3 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.421947\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.552062 28.603739 13.007825 26.903065 11.004386 C 25.202391 9.000947 22.84364 7.665927 20.250583 7.239175 C 17.657527 6.812424 14.995346 7.321125 12.742326 8.673886 C 10.489307 10.026647 8.788969 12.137295 7.946794 14.626633 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 7.946794 14.626633 C 7.431358 16.150182 7.25354 17.767796 7.425712 19.366932 C 7.597883 20.966067 8.115956 22.508758 8.943886 23.887674 C 9.771816 25.266589 10.889948 26.448992 12.220488 27.352618 C 13.551028 28.256244 15.062388 28.85964 16.649417 29.120825 C 18.236445 29.382009 19.861464 29.294783 21.411415 28.865213 C 22.961365 28.435643 24.399449 27.673928 25.625614 26.633065 C 26.851779 25.592201 27.836914 24.296901 28.512479 22.837281 C 29.188044 21.377662 29.538 19.788377 29.538 18.18 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_d5b40e28ea5a2a169ad66b05c7bde938.setIcon(div_icon_269106323e3f124b0c48109693dc77d3);
+        
+    
+        var popup_0bb79a6c4636712fcc23e74149b85635 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3dd97d370d16576495874bbbbeb28948 = $(`<div id="html_3dd97d370d16576495874bbbbeb28948" style="width: 100.0%; height: 100.0%;">Cancelled: 315<br> Delivered: 388</div>`)[0];
+                popup_0bb79a6c4636712fcc23e74149b85635.setContent(html_3dd97d370d16576495874bbbbeb28948);
+            
+        
+
+        marker_d5b40e28ea5a2a169ad66b05c7bde938.bindPopup(popup_0bb79a6c4636712fcc23e74149b85635)
+        ;
+
+        
+    
+    
+            var marker_c96f1031e1d19957adbd220260f6e550 = L.marker(
+                [20.5, 84.4167],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_b6a157b5f4fa4882b2be85ce874ae31a = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.427547\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.440275 28.522566 12.795461 26.689083 10.759673 C 24.855601 8.723885 22.331103 7.438172 19.606317 7.152458 C 16.881531 6.866745 14.145243 7.600827 11.929349 9.212009 C 9.713456 10.823191 8.171485 13.199843 7.603174 15.879976 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 7.603174 15.879976 C 7.280908 17.39977 7.281628 18.970465 7.605286 20.489963 C 7.928945 22.00946 8.568374 23.444108 9.482009 24.70065 C 10.395644 25.957193 11.563251 27.007801 12.908933 27.784182 C 14.254615 28.560564 15.748568 29.045525 17.293682 29.207542 C 18.838797 29.369558 20.400852 29.205042 21.878312 28.724687 C 23.355772 28.244332 24.715914 27.458777 25.870326 26.419084 C 27.024738 25.379392 27.947853 24.108588 28.579667 22.689279 C 29.21148 21.269969 29.538 19.733588 29.538 18.180002 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_c96f1031e1d19957adbd220260f6e550.setIcon(div_icon_b6a157b5f4fa4882b2be85ce874ae31a);
+        
+    
+        var popup_1871e9f2d0786a61e17dff50b3961206 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8912e621d941c49beca9baf0512b64d7 = $(`<div id="html_8912e621d941c49beca9baf0512b64d7" style="width: 100.0%; height: 100.0%;">Cancelled: 400<br> Delivered: 457</div>`)[0];
+                popup_1871e9f2d0786a61e17dff50b3961206.setContent(html_8912e621d941c49beca9baf0512b64d7);
+            
+        
+
+        marker_c96f1031e1d19957adbd220260f6e550.bindPopup(popup_1871e9f2d0786a61e17dff50b3961206)
+        ;
+
+        
+    
+    
+            var marker_7a387c60495d8ea3213d26db72c34da5 = L.marker(
+                [27.25, 80.75],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_ade38872307b196d29f3565253140971 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.432934\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.682654 28.694285 13.257084 27.144444 11.298838 C 25.594602 9.340592 23.427722 7.962233 20.997165 7.388536 C 18.566607 6.814839 16.012087 7.078781 13.750177 8.13732 C 11.488268 9.19586 9.648991 10.988149 8.532283 13.221913 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 8.532283 13.221913 C 7.784363 14.717984 7.384568 16.364079 7.362928 18.036546 C 7.341288 19.709013 7.69836 21.3649 8.40732 22.879823 C 9.116281 24.394745 10.158923 25.729795 11.456927 26.784689 C 12.754931 27.839583 14.27496 28.587228 15.902835 28.971464 C 17.53071 29.3557 19.224624 29.366658 20.857334 29.003515 C 22.490044 28.640373 24.019619 27.912456 25.331162 26.874444 C 26.642705 25.836432 27.702533 24.514982 28.431034 23.009359 C 29.159535 21.503736 29.538 19.852607 29.538 18.18 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_7a387c60495d8ea3213d26db72c34da5.setIcon(div_icon_ade38872307b196d29f3565253140971);
+        
+    
+        var popup_cd0a61437766e1a0d9c28a29a36172fe = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_80515417a505a1c4c3d209b692ec577f = $(`<div id="html_80515417a505a1c4c3d209b692ec577f" style="width: 100.0%; height: 100.0%;">Cancelled: 1837<br> Delivered: 2473</div>`)[0];
+                popup_cd0a61437766e1a0d9c28a29a36172fe.setContent(html_80515417a505a1c4c3d209b692ec577f);
+            
+        
+
+        marker_7a387c60495d8ea3213d26db72c34da5.bindPopup(popup_cd0a61437766e1a0d9c28a29a36172fe)
+        ;
+
+        
+    
+    
+            var marker_c67fdf867c494183c6463bec26d371ac = L.marker(
+                [23.0, 72.0],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_cd9d222ea86295efc257e322fe068268 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.437954\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 16.06928 28.935303 14.001806 27.801082 12.221727 C 26.66686 10.441648 25.047592 9.021907 23.134497 8.130163 C 21.221403 7.238418 19.092875 6.911212 17.000274 7.187182 C 14.907673 7.463153 12.936748 8.330993 11.320246 9.688219 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 11.320246 9.688219 C 9.892603 10.886877 8.790028 12.426425 8.114852 14.163976 C 7.439676 15.901526 7.213454 17.781607 7.457182 19.629726 C 7.700911 21.477844 8.406809 23.234998 9.509361 24.738103 C 10.611912 26.241208 12.075919 27.442277 13.765503 28.229837 C 15.455087 29.017397 17.316308 29.366306 19.176423 29.244179 C 21.036539 29.122052 22.836164 28.532789 24.408273 27.531082 C 25.980382 26.529374 27.274784 25.1472 28.171344 23.512842 C 29.067905 21.878485 29.538 20.04412 29.538 18.18 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_c67fdf867c494183c6463bec26d371ac.setIcon(div_icon_cd9d222ea86295efc257e322fe068268);
+        
+    
+        var popup_03d1f412e2d3828c62ed413276a2e6a8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1d90ae02eb4739d9bf2359f6bfd39136 = $(`<div id="html_1d90ae02eb4739d9bf2359f6bfd39136" style="width: 100.0%; height: 100.0%;">Cancelled: 636<br> Delivered: 1125</div>`)[0];
+                popup_03d1f412e2d3828c62ed413276a2e6a8.setContent(html_1d90ae02eb4739d9bf2359f6bfd39136);
+            
+        
+
+        marker_c67fdf867c494183c6463bec26d371ac.bindPopup(popup_03d1f412e2d3828c62ed413276a2e6a8)
+        ;
+
+        
+    
+    
+            var marker_27cff99d40f2ed8ef6a69757fcfd0b33 = L.marker(
+                [11.0, 78.0],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_658a390354b156a90db89f0c4ffc13c9 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.443259\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.762746 28.747535 13.410552 27.287736 11.483869 C 25.827937 9.557187 23.777385 8.159729 21.450308 7.505643 C 19.12323 6.851557 16.644894 6.976052 14.395079 7.86005 C 12.145265 8.744049 10.24508 10.339965 8.98571 12.40324 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 8.98571 12.40324 C 8.093711 13.864636 7.552201 15.512968 7.403755 17.218636 C 7.25531 18.924304 7.503924 20.641401 8.13005 22.234921 C 8.756177 23.82844 9.742965 25.255494 11.012827 26.40388 C 12.282689 27.552265 13.801448 28.391075 15.449692 28.854357 C 17.097936 29.317639 18.831304 29.392925 20.513509 29.074295 C 22.195715 28.755666 23.781482 28.051696 25.146131 27.017736 C 26.510779 25.983776 27.617581 24.647654 28.379513 23.114422 C 29.141444 21.581191 29.538 19.892115 29.538 18.18 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_27cff99d40f2ed8ef6a69757fcfd0b33.setIcon(div_icon_658a390354b156a90db89f0c4ffc13c9);
+        
+    
+        var popup_43e7281a636ab6c19c75b09af21fe3e1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5a65c1af65196af6112e347ae653f0dd = $(`<div id="html_5a65c1af65196af6112e347ae653f0dd" style="width: 100.0%; height: 100.0%;">Cancelled: 1744<br> Delivered: 2481</div>`)[0];
+                popup_43e7281a636ab6c19c75b09af21fe3e1.setContent(html_5a65c1af65196af6112e347ae653f0dd);
+            
+        
+
+        marker_27cff99d40f2ed8ef6a69757fcfd0b33.bindPopup(popup_43e7281a636ab6c19c75b09af21fe3e1)
+        ;
+
+        
+    
+    
+            var marker_f23f24ff197390df212727e00531a254 = L.marker(
+                [30.25, 79.25],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_362b056dee5604fd94c4b38480ed35ed = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.448368\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.788781 28.764471 13.460534 27.33352 11.544729 C 25.902569 9.628925 23.889563 8.226466 21.596655 7.547864 C 19.303747 6.869262 16.851702 6.950258 14.608574 7.778693 C 12.365446 8.607128 10.449378 10.13937 9.147973 12.145429 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 9.147973 12.145429 C 8.209166 13.59256 7.620882 15.238999 7.430056 16.953389 C 7.23923 18.667778 7.451076 20.403279 8.048693 22.021426 C 8.646309 23.639573 9.613368 25.096157 10.872715 26.274967 C 12.132061 27.453777 13.649288 28.322606 15.303345 28.812136 C 16.957403 29.301665 18.7031 29.398522 20.40116 29.094977 C 22.099219 28.791432 23.703248 28.095779 25.085271 27.06352 C 26.467293 26.031261 27.589552 24.690598 28.362508 23.148494 C 29.135464 21.60639 29.538 19.904977 29.538 18.18 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_f23f24ff197390df212727e00531a254.setIcon(div_icon_362b056dee5604fd94c4b38480ed35ed);
+        
+    
+        var popup_e449b0cbe5f426b9dfb6dfd4ec2f4b06 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fe7d662098e09a2b2a5dc59aec1ceca5 = $(`<div id="html_fe7d662098e09a2b2a5dc59aec1ceca5" style="width: 100.0%; height: 100.0%;">Cancelled: 272<br> Delivered: 394</div>`)[0];
+                popup_e449b0cbe5f426b9dfb6dfd4ec2f4b06.setContent(html_fe7d662098e09a2b2a5dc59aec1ceca5);
+            
+        
+
+        marker_f23f24ff197390df212727e00531a254.bindPopup(popup_e449b0cbe5f426b9dfb6dfd4ec2f4b06)
+        ;
+
+        
+    
+    
+            var marker_95ec655e5e4c01d94eddbcf23a90b5a1 = L.marker(
+                [24.0, 88.0],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_65b7248c093b2fa5360eb7051d0b4542 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.453422\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.559043 28.608696 13.021119 26.916206 11.019895 C 25.223716 9.018672 22.875278 7.680949 20.290688 7.245851 C 17.706098 6.810753 15.049117 7.305849 12.794696 8.642637 C 10.540276 9.979426 8.831256 12.073207 7.973135 14.549705 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 7.973135 14.549705 C 7.445418 16.072672 7.256071 17.692551 7.418322 19.296168 C 7.580574 20.899786 8.090556 22.448907 8.912638 23.835304 C 9.73472 25.221701 10.849301 26.412317 12.178513 27.32397 C 13.507724 28.235624 15.019873 28.846578 16.609313 29.114149 C 18.198753 29.38172 19.827588 29.299528 21.38202 28.873316 C 22.936452 28.447103 24.379418 27.687032 25.610106 26.646205 C 26.840794 25.605378 27.829861 24.308611 28.508206 22.846502 C 29.186551 21.384392 29.538 19.791803 29.538 18.179998 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_95ec655e5e4c01d94eddbcf23a90b5a1.setIcon(div_icon_65b7248c093b2fa5360eb7051d0b4542);
+        
+    
+        var popup_1e5fac4780c38239f1293316de9dcbe5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_504f9b602118e1b4df884e1492561214 = $(`<div id="html_504f9b602118e1b4df884e1492561214" style="width: 100.0%; height: 100.0%;">Cancelled: 1006<br> Delivered: 1245</div>`)[0];
+                popup_1e5fac4780c38239f1293316de9dcbe5.setContent(html_504f9b602118e1b4df884e1492561214);
+            
+        
+
+        marker_95ec655e5e4c01d94eddbcf23a90b5a1.bindPopup(popup_1e5fac4780c38239f1293316de9dcbe5)
+        ;
+
+        
+    
+    
+            var marker_1f1006586f3033f7477d4689bc237bfa = L.marker(
+                [26.0, 74.0],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_e0b9c527ef0aff5c15b447a985083ae3 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.458523\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.966379 28.875106 13.802668 27.635123 11.96894 C 26.39514 10.135212 24.633983 8.714155 22.579619 7.889714 C 20.525255 7.065272 18.27032 6.874622 16.106698 7.342441 C 13.943076 7.810261 11.96833 8.915454 10.438073 10.514964 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 10.438073 10.514964 C 9.184794 11.824962 8.271721 13.422565 7.779129 15.167316 C 7.286537 16.912068 7.229297 18.751295 7.612441 20.523301 C 7.995585 22.295308 8.807546 23.946596 9.97694 25.331992 C 11.146334 26.717389 12.637857 27.795068 14.32038 28.470286 C 16.002904 29.145504 17.825634 29.397875 19.628322 29.205212 C 21.431011 29.012549 23.159236 28.380669 24.661059 27.365124 C 26.162882 26.349578 27.392963 24.981026 28.243159 23.379786 C 29.093356 21.778545 29.538 19.992957 29.538 18.180002 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_1f1006586f3033f7477d4689bc237bfa.setIcon(div_icon_e0b9c527ef0aff5c15b447a985083ae3);
+        
+    
+        var popup_3cbaf08b10f4e368eeb1326e830451a3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_19a333c3f1e04c1c76b91796214069b8 = $(`<div id="html_19a333c3f1e04c1c76b91796214069b8" style="width: 100.0%; height: 100.0%;">Cancelled: 430<br> Delivered: 706</div>`)[0];
+                popup_3cbaf08b10f4e368eeb1326e830451a3.setContent(html_19a333c3f1e04c1c76b91796214069b8);
+            
+        
+
+        marker_1f1006586f3033f7477d4689bc237bfa.bindPopup(popup_3cbaf08b10f4e368eeb1326e830451a3)
+        ;
+
+        
+    
+    
+            var marker_206efd606e88a0f0d4e796f7742af234 = L.marker(
+                [28.6667, 77.2167],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_f9444fce8a4240e4d5c79fca147d27e4 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.513926\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.91519 28.844092 13.703846 27.550134 11.845072 C 26.256175 9.986299 24.423261 8.567858 22.299308 7.781607 C 20.175355 6.995356 17.860647 6.878417 15.668267 7.446608 C 13.475888 8.014798 11.509352 9.241291 10.03465 10.960192 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 10.03465 10.960192 C 8.870707 12.316874 8.051921 13.935117 7.64832 15.676511 C 7.24472 17.417906 7.26815 19.231348 7.716608 20.961733 C 8.165065 22.692118 9.025389 24.288666 10.223995 25.614823 C 11.422601 26.940979 12.924315 27.957827 14.600693 28.578393 C 16.277072 29.19896 18.078919 29.405034 19.852123 29.178991 C 21.625327 28.952947 23.31785 28.301419 24.784929 27.280133 C 26.252008 26.258846 27.45059 24.897772 28.27816 23.313324 C 29.10573 21.728876 29.538 19.967552 29.538 18.179998 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_206efd606e88a0f0d4e796f7742af234.setIcon(div_icon_f9444fce8a4240e4d5c79fca147d27e4);
+        
+    
+        var popup_165df5b5120fc558329e3143aa35d0ad = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f8e00297634e7a91be827bafa6a6fa1e = $(`<div id="html_f8e00297634e7a91be827bafa6a6fa1e" style="width: 100.0%; height: 100.0%;">Cancelled: 1012<br> Delivered: 1602</div>`)[0];
+                popup_165df5b5120fc558329e3143aa35d0ad.setContent(html_f8e00297634e7a91be827bafa6a6fa1e);
+            
+        
+
+        marker_206efd606e88a0f0d4e796f7742af234.bindPopup(popup_165df5b5120fc558329e3143aa35d0ad)
+        ;
+
+        
+    
+    
+            var marker_62ce001a73c0055146e3aed206a6b5b1 = L.marker(
+                [23.5, 78.5],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_5d697dc16b10b5a472d0d58d6b8381ef = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.519083\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.863463 28.812034 13.604157 27.462645 11.721209 C 26.113256 9.838262 24.207117 8.42471 22.013473 7.680219 C 19.819828 6.935728 17.447066 6.897083 15.230341 7.569744 C 13.013616 8.242404 11.062456 9.593133 9.652465 11.431139 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 9.652465 11.431139 C 8.580048 12.829098 7.856127 14.462746 7.540901 16.19624 C 7.225675 17.929733 7.328129 19.713653 7.839744 21.399659 C 8.351359 23.085665 9.257549 24.625693 10.482962 25.891683 C 11.708375 27.157672 13.218076 28.113533 14.886527 28.679781 C 16.554979 29.246029 18.334616 29.406522 20.077455 29.147914 C 21.820295 28.889306 23.476651 28.218969 24.908791 27.192645 C 26.340931 26.166321 27.508028 24.813268 28.313032 23.245998 C 29.118037 21.678728 29.538 19.941921 29.538 18.18 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_62ce001a73c0055146e3aed206a6b5b1.setIcon(div_icon_5d697dc16b10b5a472d0d58d6b8381ef);
+        
+    
+        var popup_b251b579dc6afd7431b6321bf37b9c80 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1b4a5ad87bbd84cb58e9715ebd033e41 = $(`<div id="html_1b4a5ad87bbd84cb58e9715ebd033e41" style="width: 100.0%; height: 100.0%;">Cancelled: 420<br> Delivered: 641</div>`)[0];
+                popup_b251b579dc6afd7431b6321bf37b9c80.setContent(html_1b4a5ad87bbd84cb58e9715ebd033e41);
+            
+        
+
+        marker_62ce001a73c0055146e3aed206a6b5b1.bindPopup(popup_b251b579dc6afd7431b6321bf37b9c80)
+        ;
+
+        
+    
+    
+            var marker_60cc35f8a06ce5d98fed6b9148a3b3b8 = L.marker(
+                [10.0, 76.5],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_d705a4f889904177000398518af14bfe = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.524159\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.733489 28.728284 13.35444 27.235818 11.415893 C 25.743352 9.477347 23.650445 8.086213 21.285269 7.460625 C 18.920093 6.835038 16.413088 7.009496 14.157356 7.956647 C 11.901625 8.903797 10.021571 10.571403 8.811991 12.697981 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 8.811991 12.697981 C 7.972645 14.173648 7.483309 15.822558 7.381828 17.517195 C 7.280346 19.211832 7.569404 20.907356 8.226647 22.472644 C 8.883889 24.037932 9.891926 25.431566 11.172801 26.545771 C 12.453676 27.659976 13.973498 28.465269 15.614731 28.899375 C 17.255964 29.33348 18.975182 29.384911 20.639429 29.049689 C 22.303677 28.714468 23.868919 28.001464 25.214107 26.965818 C 26.559295 25.930172 27.648836 24.599288 28.398471 23.076087 C 29.148106 21.552886 29.538 19.877673 29.538 18.18 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_60cc35f8a06ce5d98fed6b9148a3b3b8.setIcon(div_icon_d705a4f889904177000398518af14bfe);
+        
+    
+        var popup_730a676e9d333609120092b19e53c3cf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8efda953fb4331a636e77357bc2487bc = $(`<div id="html_8efda953fb4331a636e77357bc2487bc" style="width: 100.0%; height: 100.0%;">Cancelled: 1256<br> Delivered: 1751</div>`)[0];
+                popup_730a676e9d333609120092b19e53c3cf.setContent(html_8efda953fb4331a636e77357bc2487bc);
+            
+        
+
+        marker_60cc35f8a06ce5d98fed6b9148a3b3b8.bindPopup(popup_730a676e9d333609120092b19e53c3cf)
+        ;
+
+        
+    
+    
+            var marker_0135c68a92f0c6c09d9aabe430f9a0e5 = L.marker(
+                [32.7333, 74.8667],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_49191315d6a3c6fef3c2241fa627534f = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.529470\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.552227 28.603856 13.00814 26.903377 11.004754 C 25.202897 9.001367 22.844391 7.666282 20.251535 7.239332 C 17.658679 6.812382 14.996621 7.32076 12.743567 8.673141 C 10.490512 10.025523 8.789967 12.135772 7.947413 14.624806 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 7.947413 14.624806 C 7.431686 16.148343 7.253594 17.766011 7.425531 19.365254 C 7.597468 20.964497 8.115349 22.50734 8.943142 23.886434 C 9.770934 25.265527 10.888982 26.448125 12.219491 27.351941 C 13.550001 28.255758 15.06138 28.859332 16.648466 29.120668 C 18.235552 29.382004 19.860662 29.294896 21.410719 28.865405 C 22.960776 28.435915 24.398976 27.674239 25.625248 26.633376 C 26.85152 25.592513 27.836747 24.297177 28.512378 22.837498 C 29.188009 21.377819 29.538 19.788457 29.538 18.179998 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_0135c68a92f0c6c09d9aabe430f9a0e5.setIcon(div_icon_49191315d6a3c6fef3c2241fa627534f);
+        
+    
+        var popup_6072844d5ddb1d7278aff31eaf237827 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6ba23ab08faad94d60a90f93244f1a98 = $(`<div id="html_6ba23ab08faad94d60a90f93244f1a98" style="width: 100.0%; height: 100.0%;">Cancelled: 138<br> Delivered: 170</div>`)[0];
+                popup_6072844d5ddb1d7278aff31eaf237827.setContent(html_6ba23ab08faad94d60a90f93244f1a98);
+            
+        
+
+        marker_0135c68a92f0c6c09d9aabe430f9a0e5.bindPopup(popup_6072844d5ddb1d7278aff31eaf237827)
+        ;
+
+        
+    
+    
+            var marker_6f0fceb4ff53b40fd61133a8583a130e = L.marker(
+                [47.15, 21.9167],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_bcf365e081c160385da4e96eb21f7d56 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.534640\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.516419 28.578224 12.94001 26.835561 10.925614 C 25.092898 8.911218 22.681415 7.590687 20.045555 7.2074 C 17.409695 6.824113 14.72199 7.403157 12.477791 8.837813 C 10.233592 10.272469 8.579795 12.46883 7.821198 15.022102 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 7.821198 15.022102 C 7.368108 16.547105 7.248488 18.15191 7.470482 19.727233 C 7.692477 21.302556 8.25093 22.811808 9.107813 24.152209 C 9.964695 25.492611 11.100105 26.633029 12.436721 27.495805 C 13.773337 28.35858 15.280115 28.923672 16.854445 29.1526 C 18.428776 29.381527 20.034092 29.268973 21.561075 28.822601 C 23.088057 28.376229 24.50124 27.606408 25.704386 26.565561 C 26.907532 25.524713 27.872697 24.237016 28.534155 22.790158 C 29.195613 21.3433 29.538 19.770888 29.538 18.18 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_6f0fceb4ff53b40fd61133a8583a130e.setIcon(div_icon_bcf365e081c160385da4e96eb21f7d56);
+        
+    
+        var popup_e7c7e8212953e7cf8a24b3dbbae58f52 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8df7f4a2874d0c27a0a0d9106c7f4df9 = $(`<div id="html_8df7f4a2874d0c27a0a0d9106c7f4df9" style="width: 100.0%; height: 100.0%;">Cancelled: 405<br> Delivered: 487</div>`)[0];
+                popup_e7c7e8212953e7cf8a24b3dbbae58f52.setContent(html_8df7f4a2874d0c27a0a0d9106c7f4df9);
+            
+        
+
+        marker_6f0fceb4ff53b40fd61133a8583a130e.bindPopup(popup_e7c7e8212953e7cf8a24b3dbbae58f52)
+        ;
+
+        
+    
+    
+            var marker_5d927ee2a25ef64756fa4ffc0f9d0b02 = L.marker(
+                [25.5, 91.3333],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_f5084b7f5405c51f9d01fcd766eda516 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.539790\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.77269 28.754026 13.429638 27.30527 11.507075 C 25.856515 9.584512 23.820321 8.185075 21.506267 7.52153 C 19.192212 6.857986 16.723833 6.965758 14.476416 7.82846 C 12.228999 8.691163 10.322522 10.262741 9.046843 12.304256 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 9.046843 12.304256 C 8.136957 13.760377 7.577617 15.40814 7.413047 17.117263 C 7.248477 18.826385 7.483133 20.550601 8.09846 22.153584 C 8.713788 23.756567 9.693131 25.194925 10.959056 26.354931 C 12.224981 27.514938 13.743221 28.365193 15.393733 28.83847 C 17.044245 29.311746 18.782352 29.395234 20.470628 29.08233 C 22.158903 28.769427 23.751646 28.068603 25.122925 27.03527 C 26.494204 26.001938 27.606899 24.664068 28.373032 23.127441 C 29.139166 21.590815 29.538 19.897027 29.538 18.18 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_5d927ee2a25ef64756fa4ffc0f9d0b02.setIcon(div_icon_f5084b7f5405c51f9d01fcd766eda516);
+        
+    
+        var popup_cc0da9c0cf3553a887665a27d71644bc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a409932cdd402d279638a69615fd1b55 = $(`<div id="html_a409932cdd402d279638a69615fd1b55" style="width: 100.0%; height: 100.0%;">Cancelled: 37<br> Delivered: 53</div>`)[0];
+                popup_cc0da9c0cf3553a887665a27d71644bc.setContent(html_a409932cdd402d279638a69615fd1b55);
+            
+        
+
+        marker_5d927ee2a25ef64756fa4ffc0f9d0b02.bindPopup(popup_cc0da9c0cf3553a887665a27d71644bc)
+        ;
+
+        
+    
+    
+            var marker_445ec7d5d625d865a5cc4ac4679ad1f9 = L.marker(
+                [30.8602, 72.3198],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_b33a8014a88b3c01cadf64f78beb48a5 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.545323\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 16.022549 28.90832 13.91129 27.726529 12.106306 C 26.544738 10.301322 24.861441 8.879905 22.884003 8.017158 C 20.906565 7.15441 18.71966 6.887276 16.592691 7.248662 C 14.465723 7.610049 12.489769 8.584481 10.908245 10.051921 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 10.908245 10.051921 C 9.558794 11.304028 8.542166 12.872706 7.950439 14.615879 C 7.358712 16.359051 7.210306 18.222451 7.518662 20.037308 C 7.827018 21.852165 8.582538 23.561982 9.716793 25.011899 C 10.851048 26.461815 12.328727 27.606694 14.015996 28.342842 C 15.703265 29.07899 17.547598 29.383491 19.381951 29.228765 C 21.216304 29.07404 22.983572 28.464904 24.523693 27.45653 C 26.063813 26.448155 27.328841 25.071932 28.2042 23.452507 C 29.079559 21.833082 29.538 20.020869 29.538 18.180002 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_445ec7d5d625d865a5cc4ac4679ad1f9.setIcon(div_icon_b33a8014a88b3c01cadf64f78beb48a5);
+        
+    
+        var popup_d78df942c30c98e2d68e9a51bd6a6b39 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f6e84c2a2b23e637ced9b7d2e4e36d7f = $(`<div id="html_f6e84c2a2b23e637ced9b7d2e4e36d7f" style="width: 100.0%; height: 100.0%;">Cancelled: 279<br> Delivered: 477</div>`)[0];
+                popup_d78df942c30c98e2d68e9a51bd6a6b39.setContent(html_f6e84c2a2b23e637ced9b7d2e4e36d7f);
+            
+        
+
+        marker_445ec7d5d625d865a5cc4ac4679ad1f9.bindPopup(popup_d78df942c30c98e2d68e9a51bd6a6b39)
+        ;
+
+        
+    
+    
+            var marker_1ab13a503e280f961b2cf2cf674b603f = L.marker(
+                [15.3333, 74.0833],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_daf0b0477c38f89bd2812464c6f60c62 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.550435\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 16.243188 29.030527 14.33976 28.066316 12.660016 C 27.102104 10.980273 25.714396 9.58212 24.041929 8.605342 C 22.369461 7.628564 20.469893 7.106833 18.533135 7.092312 C 16.596376 7.07779 14.689198 7.570978 13.002272 8.522568 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 13.002272 8.522568 C 11.303073 9.48108 9.886565 10.871282 8.896373 12.552217 C 7.90618 14.233151 7.376939 16.146018 7.362312 18.096866 C 7.347684 20.047714 7.848183 21.968302 8.813059 23.663895 C 9.777935 25.359488 11.173438 26.770774 12.858072 27.754659 C 14.542707 28.738543 16.457545 29.260609 18.408434 29.267922 C 20.359323 29.275236 22.278021 28.767541 23.969985 27.796315 C 25.661949 26.825089 27.067993 25.424305 28.045555 23.735994 C 29.023117 22.047682 29.538 20.130901 29.538 18.179998 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_1ab13a503e280f961b2cf2cf674b603f.setIcon(div_icon_daf0b0477c38f89bd2812464c6f60c62);
+        
+    
+        var popup_38f41b7030744072c03049b7e391fbd1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a3e6181c42fe08fb600bc9a5fdc4fd93 = $(`<div id="html_a3e6181c42fe08fb600bc9a5fdc4fd93" style="width: 100.0%; height: 100.0%;">Cancelled: 139<br> Delivered: 280</div>`)[0];
+                popup_38f41b7030744072c03049b7e391fbd1.setContent(html_a3e6181c42fe08fb600bc9a5fdc4fd93);
+            
+        
+
+        marker_1ab13a503e280f961b2cf2cf674b603f.bindPopup(popup_38f41b7030744072c03049b7e391fbd1)
+        ;
+
+        
+    
+    
+            var marker_647a58da487e7f0d2bd581d00032e957 = L.marker(
+                [20.3228, 72.9652],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_a4593ddfc68434c50ea79006fcaeddd4 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.555671\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.550888 28.602904 13.00559 26.900853 11.001781 C 25.198802 8.997971 22.838316 7.66341 20.243839 7.238068 C 17.649361 6.812725 14.986312 7.323719 12.733539 8.679168 C 10.480765 10.034617 8.781901 12.148098 7.942422 14.639585 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 7.942422 14.639585 C 7.429048 16.163222 7.253164 17.780448 7.426998 19.378824 C 7.600832 20.9772 8.12026 22.518805 8.949168 23.896461 C 9.778076 25.274117 10.896799 26.455139 12.227558 27.357416 C 13.558317 28.259693 15.069541 28.861819 16.656161 29.121932 C 18.242782 29.382046 19.867158 29.293975 21.416354 28.863842 C 22.965551 28.43371 24.402814 27.671721 25.628219 26.630853 C 26.853624 25.589985 27.838098 24.294931 28.513196 22.83573 C 29.188294 21.37653 29.538 19.787801 29.538 18.18 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_647a58da487e7f0d2bd581d00032e957.setIcon(div_icon_a4593ddfc68434c50ea79006fcaeddd4);
+        
+    
+        var popup_d2e3f4a1cc81f1669e20de0a596a86f0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cf1a490686ccf7d4a1fadd31cc17707b = $(`<div id="html_cf1a490686ccf7d4a1fadd31cc17707b" style="width: 100.0%; height: 100.0%;">Cancelled: 13<br> Delivered: 16</div>`)[0];
+                popup_d2e3f4a1cc81f1669e20de0a596a86f0.setContent(html_cf1a490686ccf7d4a1fadd31cc17707b);
+            
+        
+
+        marker_647a58da487e7f0d2bd581d00032e957.bindPopup(popup_d2e3f4a1cc81f1669e20de0a596a86f0)
+        ;
+
+        
+    
+    
+            var marker_28d9518a7022e04a5c81b6471622113d = L.marker(
+                [31.0, 78.0],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_98e1fff6e4cd3bd615d3a9fb82381734 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.560821\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.62943 28.65794 13.155349 27.047211 11.177735 C 25.436482 9.200121 23.191691 7.837587 20.693896 7.321424 C 18.196101 6.805261 15.595112 7.166428 13.332452 8.343616 C 11.069791 9.520805 9.281167 11.443409 8.270202 13.785065 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 8.270202 13.785065 C 7.61762 15.296613 7.30982 16.934703 7.369219 18.580033 C 7.428617 20.225362 7.853737 21.836993 8.613616 23.297548 C 9.373495 24.758104 10.449227 26.031243 11.762464 27.024241 C 13.075701 28.01724 14.593768 28.705391 16.206104 29.038576 C 17.818439 29.371761 19.484926 29.341689 21.084191 28.950552 C 22.683456 28.559414 24.175708 27.816942 25.452265 26.777211 C 26.728821 25.73748 27.75792 24.426359 28.464611 22.93934 C 29.171301 21.452321 29.538 19.826401 29.538 18.18 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_28d9518a7022e04a5c81b6471622113d.setIcon(div_icon_98e1fff6e4cd3bd615d3a9fb82381734);
+        
+    
+        var popup_4f969e971b276d3a4b8975626f66d2d6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_95798ee7e3e9914a42031cbe91c98f5b = $(`<div id="html_95798ee7e3e9914a42031cbe91c98f5b" style="width: 100.0%; height: 100.0%;">Cancelled: 161<br> Delivered: 209</div>`)[0];
+                popup_4f969e971b276d3a4b8975626f66d2d6.setContent(html_95798ee7e3e9914a42031cbe91c98f5b);
+            
+        
+
+        marker_28d9518a7022e04a5c81b6471622113d.bindPopup(popup_4f969e971b276d3a4b8975626f66d2d6)
+        ;
+
+        
+    
+    
+            var marker_a71530abc49c9665f1e823ba7bba8927 = L.marker(
+                [24.0, 92.0],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_afd12c7b30cdde6c6ee28dde6ae8d633 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.565748\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.682586 28.694239 13.256954 27.14432 11.298682 C 25.594401 9.34041 23.427422 7.96207 20.996778 7.388445 C 18.566133 6.814819 16.011551 7.078883 13.749637 8.137573 C 11.487724 9.196263 9.648506 10.988719 8.531927 13.222624 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 8.531927 13.222624 C 7.78413 14.718719 7.384454 16.364807 7.362919 18.037241 C 7.341385 19.709676 7.698545 21.365509 8.407573 22.880362 C 9.116601 24.395216 10.159287 25.730188 11.457312 26.785002 C 12.755337 27.839817 14.275365 28.587385 15.903221 28.971555 C 17.531077 29.355725 19.224956 29.36663 20.857624 29.003451 C 22.490291 28.640272 24.019819 27.912336 25.331317 26.874321 C 26.642815 25.836307 27.702603 24.51487 28.431076 23.009271 C 29.159549 21.503672 29.538 19.852576 29.538 18.180002 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_a71530abc49c9665f1e823ba7bba8927.setIcon(div_icon_afd12c7b30cdde6c6ee28dde6ae8d633);
+        
+    
+        var popup_6e415c266124cdacea550c531c79a79e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_75cfa50cefc62ab33925d7eb4efe569f = $(`<div id="html_75cfa50cefc62ab33925d7eb4efe569f" style="width: 100.0%; height: 100.0%;">Cancelled: 26<br> Delivered: 35</div>`)[0];
+                popup_6e415c266124cdacea550c531c79a79e.setContent(html_75cfa50cefc62ab33925d7eb4efe569f);
+            
+        
+
+        marker_a71530abc49c9665f1e823ba7bba8927.bindPopup(popup_6e415c266124cdacea550c531c79a79e)
+        ;
+
+        
+    
+    
+            var marker_1bca85892b721ed30559fc29a12b0f63 = L.marker(
+                [30.7343, 76.7933],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_2f527c518e7af95819daf5445b0c8957 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.570830\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 16.24859 29.033354 14.350286 28.074241 12.673846 C 27.115128 10.997407 25.734429 9.600304 24.069434 8.621459 C 22.40444 7.642614 20.512228 7.115584 18.580952 7.092773 C 16.649677 7.069963 14.745545 7.552154 13.057895 8.491401 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 13.057895 8.491401 C 11.350852 9.441441 9.924831 10.825966 8.92481 12.504218 C 7.924789 14.18247 7.385846 16.095579 7.362773 18.049048 C 7.339701 20.002516 7.833308 21.927821 8.793412 23.629224 C 9.753515 25.330627 11.146438 26.748447 12.830566 27.738541 C 14.514693 28.728634 16.430952 29.25627 18.384523 29.267807 C 20.338093 29.279343 22.26045 28.774375 23.956154 27.804241 C 25.651857 26.834107 27.061427 25.432836 28.041558 23.742891 C 29.021689 22.052946 29.538 20.133605 29.538 18.18 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_1bca85892b721ed30559fc29a12b0f63.setIcon(div_icon_2f527c518e7af95819daf5445b0c8957);
+        
+    
+        var popup_4d26c06691381903a85f07526ec12240 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_51f0dbc5b3484b67f16db3989d130f94 = $(`<div id="html_51f0dbc5b3484b67f16db3989d130f94" style="width: 100.0%; height: 100.0%;">Cancelled: 44<br> Delivered: 89</div>`)[0];
+                popup_4d26c06691381903a85f07526ec12240.setContent(html_51f0dbc5b3484b67f16db3989d130f94);
+            
+        
+
+        marker_1bca85892b721ed30559fc29a12b0f63.bindPopup(popup_4d26c06691381903a85f07526ec12240)
+        ;
+
+        
+    
+    
+            var marker_7b3dfbcf555bee7d55a38d20750e2598 = L.marker(
+                [27.75, 88.5],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_98b34d39db7697c1302a9f5d78111cdb = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.576197\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.533276 28.590334 12.972071 26.867572 10.962782 C 25.14481 8.953494 22.758282 7.625967 20.142576 7.221947 C 17.52687 6.817926 14.851021 7.36352 12.602302 8.759375 C 10.353583 10.155231 8.677313 12.311144 7.878741 14.834521 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 7.878741 14.834521 C 7.396242 16.359152 7.249238 17.970273 7.447842 19.55705 C 7.646446 21.143826 8.185996 22.669017 9.029375 24.027698 C 9.872755 25.38638 11.000169 26.546664 12.334059 27.42873 C 13.667949 28.310796 15.177009 28.893943 16.757424 29.138053 C 18.33784 29.382164 19.95252 29.281508 21.490383 28.843012 C 23.028247 28.404515 24.453201 27.638469 25.667218 26.597572 C 26.881235 25.556675 27.855822 24.265357 28.523933 22.812453 C 29.192044 21.359548 29.538 19.779157 29.538 18.18 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_7b3dfbcf555bee7d55a38d20750e2598.setIcon(div_icon_98b34d39db7697c1302a9f5d78111cdb);
+        
+    
+        var popup_485f52d6d697774242079987f73b7aa3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1a1a04d0da88eeef8eabc96d55cd085a = $(`<div id="html_1a1a04d0da88eeef8eabc96d55cd085a" style="width: 100.0%; height: 100.0%;">Cancelled: 37<br> Delivered: 45</div>`)[0];
+                popup_485f52d6d697774242079987f73b7aa3.setContent(html_1a1a04d0da88eeef8eabc96d55cd085a);
+            
+        
+
+        marker_7b3dfbcf555bee7d55a38d20750e2598.bindPopup(popup_485f52d6d697774242079987f73b7aa3)
+        ;
+
+        
+    
+    
+            var marker_158f2d258d8620935da8f790981946cd = L.marker(
+                [-3.198, 114.4621],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_a34120eae051b0bba62fed56af7df854 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.581688\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.293216 28.41063 12.517569 26.397684 10.448373 C 24.384739 8.379177 21.64121 7.175753 18.755522 7.09621 C 15.869835 7.016667 13.064178 8.067128 10.940302 10.022293 C 8.816426 11.977459 7.537863 14.686787 7.378837 17.569187 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 7.378837 17.569187 C 7.297209 19.048712 7.512984 20.529699 8.01338 21.924424 C 8.513777 23.31915 9.288715 24.599522 10.292294 25.689699 C 11.295872 26.779876 12.507877 27.657899 13.856517 28.271762 C 15.205156 28.885624 16.663267 29.222961 18.144479 29.26379 C 19.625691 29.304619 21.10017 29.048119 22.480578 28.509481 C 23.860986 27.970844 25.119518 27.16092 26.181628 26.127683 C 27.243738 25.094447 28.088032 23.858709 28.664501 22.493666 C 29.240969 21.128624 29.538 19.661773 29.538 18.179998 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_158f2d258d8620935da8f790981946cd.setIcon(div_icon_a34120eae051b0bba62fed56af7df854);
+        
+    
+        var popup_de2ea7e36a3324ebbe1120424ef75a22 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7f67456a3d9614161e6ec9425b91e419 = $(`<div id="html_7f67456a3d9614161e6ec9425b91e419" style="width: 100.0%; height: 100.0%;">Cancelled: 56<br> Delivered: 58</div>`)[0];
+                popup_de2ea7e36a3324ebbe1120424ef75a22.setContent(html_7f67456a3d9614161e6ec9425b91e419);
+            
+        
+
+        marker_158f2d258d8620935da8f790981946cd.bindPopup(popup_de2ea7e36a3324ebbe1120424ef75a22)
+        ;
+
+        
+    
+    
+            var marker_1439b9f44d322f01da33a93854ac1771 = L.marker(
+                [25.0, 94.0],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_d384cd6fbaa50329d67ac09021f54bf2 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.586750\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 16.443761 29.130191 14.731551 28.347524 13.181725 C 27.564858 11.631899 26.429 10.287356 25.031731 9.256741 C 23.634463 8.226125 22.014461 7.537966 20.302628 7.247868 C 18.590796 6.95777 16.834517 7.073764 15.175706 7.586476 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 15.175706 7.586476 C 13.21573 8.192274 11.461801 9.330293 10.109949 10.873339 C 8.758097 12.416385 7.860635 14.304748 7.517868 16.327371 C 7.175101 18.349995 7.400294 20.42861 8.168279 22.330897 C 8.936263 24.233184 10.217319 25.88553 11.868268 27.103259 C 13.519217 28.320987 15.476172 29.056975 17.520412 29.228964 C 19.564652 29.400953 21.617069 29.002288 23.448274 28.077525 C 25.279478 27.152763 26.818607 25.737688 27.893638 23.990461 C 28.968668 22.243233 29.538 20.231464 29.538 18.180002 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_1439b9f44d322f01da33a93854ac1771.setIcon(div_icon_d384cd6fbaa50329d67ac09021f54bf2);
+        
+    
+        var popup_0d658b3dc3168210d0c91ac939853bc2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9d7327d65fc5d9623b536fb09ea61c55 = $(`<div id="html_9d7327d65fc5d9623b536fb09ea61c55" style="width: 100.0%; height: 100.0%;">Cancelled: 39<br> Delivered: 92</div>`)[0];
+                popup_0d658b3dc3168210d0c91ac939853bc2.setContent(html_9d7327d65fc5d9623b536fb09ea61c55);
+            
+        
+
+        marker_1439b9f44d322f01da33a93854ac1771.bindPopup(popup_0d658b3dc3168210d0c91ac939853bc2)
+        ;
+
+        
+    
+    
+            var marker_955896d07f6594c471208620352a2243 = L.marker(
+                [23.0, 93.0],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_3eaa48608ed63f9fe9d734b5513f108d = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.591839\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 16.590608 29.196257 15.01964 28.536 13.573878 C 27.875742 12.128117 26.912278 10.841079 25.711096 9.800249 C 24.509913 8.759418 23.09886 7.988925 21.57385 7.541142 C 20.04884 7.093358 18.445227 6.978666 16.872013 7.20486 C 15.298798 7.431054 13.792455 7.992891 12.455374 8.852181 C 11.118293 9.711471 9.98147 10.848294 9.12218 12.185375 C 8.26289 13.522457 7.701054 15.0288 7.47486 16.602014 C 7.248666 18.175228 7.363359 19.778841 7.811142 21.303852 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 7.811142 21.303852 C 8.56242 23.862466 10.212062 26.06613 12.455376 27.50782 C 14.69869 28.94951 17.388499 29.534642 20.027989 29.15514 C 22.667478 28.775638 25.08348 27.456401 26.829752 25.441094 C 28.576025 23.425788 29.538 20.84663 29.538 18.179998 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_955896d07f6594c471208620352a2243.setIcon(div_icon_3eaa48608ed63f9fe9d734b5513f108d);
+        
+    
+        var popup_c9439f9218454e05b4a10000bcf7318e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bb40b12642211e6c5a8b1e76cde76a63 = $(`<div id="html_bb40b12642211e6c5a8b1e76cde76a63" style="width: 100.0%; height: 100.0%;">Cancelled: 18<br> Delivered: 15</div>`)[0];
+                popup_c9439f9218454e05b4a10000bcf7318e.setContent(html_bb40b12642211e6c5a8b1e76cde76a63);
+            
+        
+
+        marker_955896d07f6594c471208620352a2243.bindPopup(popup_c9439f9218454e05b4a10000bcf7318e)
+        ;
+
+        
+    
+    
+            var marker_7d9c914859ef22bf1ff6456a52d0af25 = L.marker(
+                [26.0, 94.25],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_ab3d8808049916c399d3ed2f60eedaa8 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.596968\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.746047 28.736576 13.378518 27.258164 11.445017 C 25.779752 9.511517 23.705046 8.117577 21.356183 7.479634 C 19.007321 6.84169 16.512506 6.994564 14.259105 7.914517 C 12.005705 8.83447 10.116713 10.471291 8.885431 12.570832 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 8.885431 12.570832 C 8.023482 14.0406 7.511804 15.689461 7.390251 17.388991 C 7.268698 19.08852 7.54051 20.793418 8.184517 22.370894 C 8.828523 23.948371 9.827558 25.356379 11.10381 26.485253 C 12.380061 27.614128 13.899512 28.433779 15.543816 28.880366 C 17.188119 29.326954 18.913449 29.388574 20.585422 29.060428 C 22.257396 28.732282 23.831448 28.023116 25.184981 26.988165 C 26.538514 25.953214 27.63545 24.620064 28.390352 23.09255 C 29.145254 21.565036 29.538 19.883873 29.538 18.180002 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_7d9c914859ef22bf1ff6456a52d0af25.setIcon(div_icon_ab3d8808049916c399d3ed2f60eedaa8);
+        
+    
+        var popup_10674dbaddbe7e34aa0765b75bc319b2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3688d5fe9b0050fb7ee8f889c9b4b831 = $(`<div id="html_3688d5fe9b0050fb7ee8f889c9b4b831" style="width: 100.0%; height: 100.0%;">Cancelled: 32<br> Delivered: 45</div>`)[0];
+                popup_10674dbaddbe7e34aa0765b75bc319b2.setContent(html_3688d5fe9b0050fb7ee8f889c9b4b831);
+            
+        
+
+        marker_7d9c914859ef22bf1ff6456a52d0af25.bindPopup(popup_10674dbaddbe7e34aa0765b75bc319b2)
+        ;
+
+        
+    
+    
+            var marker_6f1c4784ec767ba9e403941558d22319 = L.marker(
+                [28.6128, 77.2311],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_8a9d6ac6818c92c1792b507eae6bb54a = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.602062\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 15.455017 28.533464 12.823412 26.71768 10.791549 C 24.901897 8.759687 22.399312 7.46682 19.691463 7.161719 C 16.983614 6.856618 14.256083 7.560191 12.033693 9.137061 C 9.811304 10.71393 8.246366 13.056025 7.64 15.712687 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 7.64 15.712687 C 7.292688 17.234355 7.270556 18.81235 7.575053 20.34316 C 7.87955 21.873971 8.50387 23.323378 9.40706 24.596306 C 10.310251 25.869235 11.472122 26.937229 12.816459 27.730234 C 14.160797 28.523238 15.657549 29.023526 17.208536 29.198281 C 18.759523 29.373035 20.330074 29.21835 21.817166 28.744371 C 23.304259 28.270392 24.67465 27.487716 25.83845 26.447682 C 27.002249 25.407647 27.93344 24.133505 28.57094 22.708832 C 29.20844 21.284159 29.538 19.740803 29.538 18.180002 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_6f1c4784ec767ba9e403941558d22319.setIcon(div_icon_8a9d6ac6818c92c1792b507eae6bb54a);
+        
+    
+        var popup_58b4b2a5450a3da10eac7e6c1b214f68 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_01cb70e9ef5bdc406469365c3122fbc0 = $(`<div id="html_01cb70e9ef5bdc406469365c3122fbc0" style="width: 100.0%; height: 100.0%;">Cancelled: 13<br> Delivered: 15</div>`)[0];
+                popup_58b4b2a5450a3da10eac7e6c1b214f68.setContent(html_01cb70e9ef5bdc406469365c3122fbc0);
+            
+        
+
+        marker_6f1c4784ec767ba9e403941558d22319.bindPopup(popup_58b4b2a5450a3da10eac7e6c1b214f68)
+        ;
+
+        
+    
+    
+            var marker_b7d465fda3b300f685e4539ba37d2457 = L.marker(
+                [28.0, 94.5],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_82ae1275dd3445a9e77f9be9d6ea6528 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.607471\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 16.177538 28.995541 14.211984 27.96848 12.492973 C 26.941419 10.773962 25.467614 9.36486 23.704255 8.415957 C 21.940896 7.467053 19.952984 7.013325 17.952538 7.103165 C 15.952093 7.193005 14.012855 7.823102 12.341654 8.926252 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 12.341654 8.926252 C 10.740861 9.982926 9.441317 11.437117 8.570519 13.146154 C 7.699721 14.855192 7.28711 16.761296 7.373165 18.677462 C 7.45922 20.593628 8.041033 22.455073 9.061523 24.079173 C 10.082012 25.703272 11.506677 27.035118 13.195745 27.944044 C 14.884814 28.85297 16.78118 29.308247 18.698795 29.265208 C 20.616409 29.22217 22.49044 28.68227 24.137029 27.698479 C 25.783617 26.714688 27.147094 25.320266 28.093691 23.652017 C 29.040287 21.983769 29.538 20.098095 29.538 18.179998 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_b7d465fda3b300f685e4539ba37d2457.setIcon(div_icon_82ae1275dd3445a9e77f9be9d6ea6528);
+        
+    
+        var popup_054105c1784e6e585f438c9c58120570 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_71b03b82709e7b002da17b64bb8b05cc = $(`<div id="html_71b03b82709e7b002da17b64bb8b05cc" style="width: 100.0%; height: 100.0%;">Cancelled: 24<br> Delivered: 46</div>`)[0];
+                popup_054105c1784e6e585f438c9c58120570.setContent(html_71b03b82709e7b002da17b64bb8b05cc);
+            
+        
+
+        marker_b7d465fda3b300f685e4539ba37d2457.bindPopup(popup_054105c1784e6e585f438c9c58120570)
+        ;
+
+        
+    
+    
+            var marker_38a796f4404f6650c14612f2844c8ae1 = L.marker(
+                [34.1667, 77.5833],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_0039b3c285351896bbbdcebcca7b5be6 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.613020\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 16.51431 29.162659 14.869832 28.439943 13.369097 C 27.717227 11.868362 26.665544 10.549593 25.363255 9.511052 C 24.060966 8.472511 22.541239 7.74065 20.917311 7.369999 C 19.293384 6.999348 17.606615 6.999348 15.982687 7.37 C 14.358759 7.740651 12.839033 8.472512 11.536744 9.511053 C 10.234455 10.549594 9.182772 11.868363 8.460057 13.369098 C 7.737341 14.869833 7.362 16.514311 7.362 18.180002 C 7.362 19.845692 7.737342 21.49017 8.460058 22.990905 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 8.460058 22.990905 C 9.549708 25.253586 11.376417 27.080294 13.639099 28.169944 C 15.90178 29.259593 18.468893 29.548837 20.917314 28.99 C 23.365735 28.431164 25.553125 27.056735 27.118949 25.093253 C 28.684773 23.129772 29.538 20.691385 29.538 18.179998 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_38a796f4404f6650c14612f2844c8ae1.setIcon(div_icon_0039b3c285351896bbbdcebcca7b5be6);
+        
+    
+        var popup_2c091896eeb3b27d44f2a44406f71338 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4f727994a76f8dbe3c5761c3806900d6 = $(`<div id="html_4f727994a76f8dbe3c5761c3806900d6" style="width: 100.0%; height: 100.0%;">Cancelled: 8<br> Delivered: 6</div>`)[0];
+                popup_2c091896eeb3b27d44f2a44406f71338.setContent(html_4f727994a76f8dbe3c5761c3806900d6);
+            
+        
+
+        marker_38a796f4404f6650c14612f2844c8ae1.bindPopup(popup_2c091896eeb3b27d44f2a44406f71338)
+        ;
+
+        
+    
+    
+            var marker_aaa45f14dd1453124b77b35046fe67d2 = L.marker(
+                [10.5669, 72.642],
+                {}
+            ).addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+    
+            var div_icon_524e99aeec76f7fc54ec09f685873f03 = L.divIcon({"className": "empty", "html": "\u003c?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?\u003e\u003c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"  \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\u003e\u003csvg xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"36pt\" height=\"36pt\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"\u003e \u003cmetadata\u003e  \u003crdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e   \u003ccc:Work\u003e    \u003cdc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"/\u003e    \u003cdc:date\u003e2024-11-25T08:48:50.618205\u003c/dc:date\u003e    \u003cdc:format\u003eimage/svg+xml\u003c/dc:format\u003e    \u003cdc:creator\u003e     \u003ccc:Agent\u003e      \u003cdc:title\u003eMatplotlib v3.8.4, https://matplotlib.org/\u003c/dc:title\u003e     \u003c/cc:Agent\u003e    \u003c/dc:creator\u003e   \u003c/cc:Work\u003e  \u003c/rdf:RDF\u003e \u003c/metadata\u003e \u003cdefs\u003e  \u003cstyle type=\"text/css\"\u003e*{stroke-linejoin: round; stroke-linecap: butt}\u003c/style\u003e \u003c/defs\u003e \u003cg id=\"figure_1\"\u003e  \u003cg id=\"patch_1\"\u003e   \u003cpath d=\"M 0 36 L 36 36 L 36 0 L 0 0 L 0 36 z\" style=\"fill: none; opacity: 0\"/\u003e  \u003c/g\u003e  \u003cg id=\"axes_1\"\u003e   \u003cg id=\"patch_2\"\u003e    \u003cpath d=\"M 29.538 18.18 C 29.538 16.233794 29.025592 14.321463 28.05249 12.636 C 27.079387 10.950536 25.679463 9.550613 23.994 8.57751 C 22.308536 7.604407 20.396205 7.092 18.449999 7.092 C 16.503794 7.092 14.591463 7.604408 12.905999 8.577511 L 18.45 18.18 z\" style=\"fill: #ff0371\"/\u003e   \u003c/g\u003e   \u003cg id=\"patch_3\"\u003e    \u003cpath d=\"M 12.905999 8.577511 C 11.220536 9.550614 9.820613 10.950537 8.84751 12.636001 C 7.874407 14.321464 7.362 16.233795 7.362 18.180001 C 7.362 20.126207 7.874408 22.038538 8.847511 23.724001 C 9.820614 25.409465 11.220538 26.809388 12.906001 27.78249 C 14.591465 28.755593 16.503796 29.268 18.450002 29.268 C 20.396207 29.268 22.308538 28.755592 23.994001 27.782489 C 25.679465 26.809386 27.079388 25.409462 28.052491 23.723998 C 29.025593 22.038535 29.538 20.126204 29.538 18.179998 L 18.45 18.18 z\" style=\"fill: #45c585\"/\u003e   \u003c/g\u003e   \u003cg id=\"matplotlib.axis_1\"/\u003e   \u003cg id=\"matplotlib.axis_2\"/\u003e  \u003c/g\u003e \u003c/g\u003e\u003c/svg\u003e"});
+            marker_aaa45f14dd1453124b77b35046fe67d2.setIcon(div_icon_524e99aeec76f7fc54ec09f685873f03);
+        
+    
+        var popup_bd5e40f6760c165e170348b6b1ba1041 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b94fe5a9da272797d786ff4fec29e0a0 = $(`<div id="html_b94fe5a9da272797d786ff4fec29e0a0" style="width: 100.0%; height: 100.0%;">Cancelled: 1<br> Delivered: 2</div>`)[0];
+                popup_bd5e40f6760c165e170348b6b1ba1041.setContent(html_b94fe5a9da272797d786ff4fec29e0a0);
+            
+        
+
+        marker_aaa45f14dd1453124b77b35046fe67d2.bindPopup(popup_bd5e40f6760c165e170348b6b1ba1041)
+        ;
+
+        
+    
+    
+            tile_layer_fd3c7d984ba62941d443c910a11a7ac0.addTo(map_d6ec8d4844608dd5fe9456f79a218424);
+        
+</script>
+</html>
